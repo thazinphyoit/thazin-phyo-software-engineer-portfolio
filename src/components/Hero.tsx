@@ -47,13 +47,13 @@ export default function Hero({ onStartChat }: HeroProps) {
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2">
                 <Mail className="h-3.5 w-3.5 text-indigo-500" />
-                <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="hover:text-blue-400 transition-colors">
+                <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="selectable hover:text-blue-400 transition-colors">
                   {PERSONAL_INFO.contact.email}
                 </a>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2">
                 <Phone className="h-3.5 w-3.5 text-emerald-500" />
-                <a href={`https://wa.me/${PERSONAL_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+                <a href={`https://wa.me/${PERSONAL_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noreferrer" className="selectable hover:text-emerald-400 transition-colors">
                   {PERSONAL_INFO.contact.whatsapp}
                 </a>
               </div>

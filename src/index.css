@@ -16,6 +16,17 @@ body {
   color: #f1f5f9;
   font-family: var(--font-sans);
   overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Contact details, form fields, and text areas stay selectable/copyable */
+.selectable,
+input,
+textarea,
+[contenteditable] {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 /* Custom scrollbars */

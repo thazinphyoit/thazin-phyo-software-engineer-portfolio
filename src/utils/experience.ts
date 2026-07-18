@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CAREER_START_DATE } from '../data/careerStartDate';
+import { CAREER_START_DATE } from '../data/careerStartDate.js';
 
 export function getYearsOfExperience(referenceDate: Date = new Date()): number {
   const start = new Date(CAREER_START_DATE);

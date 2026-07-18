@@ -5,8 +5,8 @@
 
 import express from 'express';
 import { GoogleGenAI } from '@google/genai';
-import { ContactMessage } from '../src/types';
-import { getYearsOfExperience } from '../src/utils/experience';
+import { ContactMessage } from '../src/types.js';
+import { getYearsOfExperience } from '../src/utils/experience.js';
 
 // In-Memory store for analytics. Let's populate it with realistic mock history
 // so the dashboard looks beautiful and fully functional immediately!

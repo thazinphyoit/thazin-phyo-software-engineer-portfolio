@@ -95,7 +95,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="block font-semibold text-slate-300">Office Location</span>
-                    <span className="text-slate-400">{PERSONAL_INFO.contact.address}</span>
+                    <span className="selectable text-slate-400">{PERSONAL_INFO.contact.address}</span>
                   </div>
                 </div>
 
@@ -105,7 +105,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="block font-semibold text-slate-300">Email Address</span>
-                    <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="text-slate-400 hover:text-blue-400 transition-colors">
+                    <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="selectable text-slate-400 hover:text-blue-400 transition-colors">
                       {PERSONAL_INFO.contact.email}
                     </a>
                   </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="block font-semibold text-slate-300">WhatsApp Hotlink</span>
-                    <a href={`https://wa.me/${PERSONAL_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                    <a href={`https://wa.me/${PERSONAL_INFO.contact.whatsapp.replace('+', '')}`} target="_blank" rel="noreferrer" className="selectable text-slate-400 hover:text-emerald-400 transition-colors">
                       {PERSONAL_INFO.contact.whatsapp}
                     </a>
                   </div>

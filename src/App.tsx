@@ -13,6 +13,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import AIChatBot from './components/AIChatBot';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
+import SourceGuard from './components/SourceGuard';
 import { PERSONAL_INFO } from './data/portfolioData';
 import { getExperienceLabel } from './utils/experience';
 import { Terminal, Github, Linkedin, Mail, Cpu, BarChart2 } from 'lucide-react';
@@ -78,7 +79,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col justify-between" id="app-wrapper">
-      
+      <SourceGuard />
+
       {/* Shared Nav Header */}
       <Header 
         activeView={activeView} 
