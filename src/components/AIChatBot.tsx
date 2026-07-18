@@ -15,7 +15,7 @@ export default function AIChatBot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'bot',
-      text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like the UOB Smart Lock & Robot Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
+      text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like Smart Rack Access & the Robot Monitoring Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
     }
   ]);
   const [input, setInput] = useState('');
@@ -25,7 +25,7 @@ export default function AIChatBot() {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const suggestedPrompts = [
-    "Tell me about the Robot Dashboard project",
+    "Tell me about the Robot Monitoring Dashboard project",
     "What is her experience with React and Node.js?",
     "Where is she based and what is her notice period?",
     "What certifications does she hold?"
@@ -74,7 +74,7 @@ export default function AIChatBot() {
     setMessages([
       {
         sender: 'bot',
-        text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like the UOB Smart Lock & Robot Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
+        text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like Smart Rack Access & the Robot Monitoring Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
       }
     ]);
     setError(null);

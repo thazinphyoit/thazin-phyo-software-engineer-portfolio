@@ -40,9 +40,14 @@ export default function Header({ activeView, setActiveView, scrollToSection }: H
           className="flex items-center gap-2 text-left hover:opacity-90"
           id="brand-logo"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 font-mono text-lg font-bold text-white shadow-lg shadow-blue-500/20">
-            TP
-          </div>
+          <img
+            src={PERSONAL_INFO.avatarUrl}
+            alt={PERSONAL_INFO.name}
+            className="h-9 w-9 rounded-lg object-cover shadow-lg shadow-blue-500/20"
+            style={{ objectPosition: 'center 17%' }}
+            referrerPolicy="no-referrer"
+            id="brand-logo-avatar"
+          />
           <div>
             <span className="block font-sans text-sm font-bold tracking-tight text-white">{PERSONAL_INFO.name}</span>
             <span className="block font-mono text-[10px] uppercase tracking-widest text-slate-400">{PERSONAL_INFO.title}</span>

@@ -89,6 +89,19 @@ npm run start
 
 ---
 
+## ☁️ Deploying to Vercel
+
+The frontend and API are deployed independently on Vercel:
+
+- The React app is built with `vite build` (configured via `vercel.json`'s `buildCommand`, bypassing the `server.ts` bundling step used for standalone Node hosting).
+- The Express API routes (`/api/chat`, `/api/contact`, `/api/analytics/*`, `/api/resume/download`) run as a single Vercel Serverless Function at `api/index.ts`, wired up via the `rewrites` rule in `vercel.json`.
+
+To enable the AI Recruiter Assistant in production, add `GEMINI_API_KEY` under your Vercel Project → Settings → Environment Variables, then redeploy. Without it, `/api/chat` gracefully falls back to a static demo response.
+
+Note: the in-memory analytics/contact-message store resets whenever a serverless function instance cold-starts, so visit counts won't persist reliably across requests the way they do with the long-running `server.ts` process used for local/standalone hosting.
+
+---
+
 ## 🔒 Security & Code Standards
 
 - **Zero Client-Side Secrets**: All third-party interactions and Gemini requests are gated behind server-side `/api/*` proxies to hide critical API keys from the browser.

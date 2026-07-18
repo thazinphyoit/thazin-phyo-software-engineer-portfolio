@@ -4,11 +4,13 @@
  */
 
 import { SkillCategory, Experience, Certification, BlogPost } from '../types';
+import { CAREER_START_DATE } from './careerStartDate';
+import profilePicture from '../assets/profile.jpeg';
 
 export const PERSONAL_INFO = {
   name: "Thazin Phyo",
   title: "Software Engineer",
-  avatarUrl: "https://6a5b792d53cbb51f4783fb11.imgix.net/sandbox/thazin-phyo-profile-picture.jpeg", // Elegant professional placeholder avatar
+  avatarUrl: profilePicture,
   profile: "Dependable IT professional with a proven track record of meeting deadlines. Passionate team player with a strong work ethic and adept at complex problem-solving. Eager to leverage skills and experience to contribute effectively to software development teams.",
   contact: {
     address: "Block 232, #10-142, Simei Street 4, Singapore 520232",
@@ -24,6 +26,7 @@ export const PERSONAL_INFO = {
     availability: "1 Month",
     expectedSalary: " SGD 6,500(Negotiable)"
   },
+  careerStartDate: CAREER_START_DATE,
   education: {
     degree: "Bachelor of Engineering (Information Technology)",
     period: "2012-2018",
@@ -78,7 +81,7 @@ export const WORK_EXPERIENCES: Experience[] = [
     ],
     projects: [
       {
-        title: "UOB Smart Rack Lock System",
+        title: "Smart Rack Access",
         description: "Integrated website with middleware and mobile applications for controlling physical rack doors and requests.",
         details: [
           "Developed web interfaces using React.js and backend integrations with Node.js and Java Servlets.",
@@ -88,7 +91,7 @@ export const WORK_EXPERIENCES: Experience[] = [
         technologies: ["React.js", "Node.js", "React Native", "Java", "Servlet", "MySQL", "Windows", "Linux"]
       },
       {
-        title: "Robot Dashboard Server",
+        title: "Surveillance and Escort Robot Monitoring Dashboard",
         description: "A centralized web dashboard for surveillance and escort robot map missions and detection image recording.",
         details: [
           "Created a web dashboard for controlling robot navigation, patrolling schedules, and real-time path maps.",
@@ -98,7 +101,7 @@ export const WORK_EXPERIENCES: Experience[] = [
         technologies: ["Python", "Flask", "SQLAlchemy", "MySQL", "Docker", "HTML5", "CSS3", "JavaScript"]
       },
       {
-        title: "PSA Bluetooth Wi-Fi Lock Management",
+        title: "Bluetooth Wi-Fi Lock Management",
         description: "Enterprise software suite for rack door access management and service request tracking.",
         details: [
           "Developed dual web & mobile systems for port-side data center cabinet security controls.",
@@ -219,7 +222,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "robot-monitoring-dashboards",
     title: "Building Real-Time Robot Monitoring Dashboards with Python & Flask",
-    excerpt: "Learn how we built the Robot Dashboard Server to handle map mission coordinates, patrolling paths, and thermal detection event logs for commercial robotics.",
+    excerpt: "Learn how we built the Surveillance and Escort Robot Monitoring Dashboard to handle map mission coordinates, patrolling paths, and thermal detection event logs for commercial robotics.",
     category: "Robotics & Python",
     readTime: "5 min read",
     date: "June 14, 2026",
@@ -228,7 +231,7 @@ export const BLOG_POSTS: BlogPost[] = [
 ### The Challenge of Robot Mission Monitoring
 In modern industrial settings, data centers, and food factories, automated patrolling robots (like the **Datum Robotics D3BOT/D5BOT**) require reliable central servers to stream telemetry, issue mission coordinates, and log thermal/acoustic anomalies.
 
-In this article, I will explain the high-level architecture of our **Robot Dashboard Server** which we successfully engineered and deployed.
+In this article, I will explain the high-level architecture of our **Surveillance and Escort Robot Monitoring Dashboard** which we successfully engineered and deployed.
 
 ### Core Architecture Components
 
@@ -269,7 +272,7 @@ Integrating software with physical hardware requires extreme defensive programmi
     author: "Thazin Phyo",
     content: `
 ### Security and Audits in Data Centers
-Cabinet racks in enterprise data centers store mission-critical financial servers. Unscheduled physical access can lead to millions in downtime. Our client requested the **UOB Smart Rack Lock System**—an enterprise solution requiring web, mobile, and controller integrations.
+Cabinet racks in enterprise data centers store mission-critical financial servers. Unscheduled physical access can lead to millions in downtime. Our client requested the **Smart Rack Access**—an enterprise solution requiring web, mobile, and controller integrations.
 
 ### Designing the JWT Authentication Flow
 When a physical technician wants to open a rack door, they submit an unlock request through their React Native mobile app.

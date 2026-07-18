@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
+import { getYearsOfExperience } from '../utils/experience';
 import { CheckCircle2, Shield, Cpu, Code2, Database, GitBranch } from 'lucide-react';
 
 export default function Skills() {
@@ -36,7 +37,7 @@ export default function Skills() {
             Technical Expertise & Stack
           </h2>
           <p className="mt-4 text-slate-400">
-            Over 4 years of professional engineering experience across full-stack applications, embedded device controllers, IoT smart integrations, and pipeline automation.
+            Over {getYearsOfExperience()} years of professional engineering experience across full-stack applications, embedded device controllers, IoT smart integrations, and pipeline automation.
           </p>
         </div>
 

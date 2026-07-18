@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import AIChatBot from './components/AIChatBot';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
 import { PERSONAL_INFO } from './data/portfolioData';
+import { getExperienceLabel } from './utils/experience';
 import { Terminal, Github, Linkedin, Mail, Cpu, BarChart2 } from 'lucide-react';
 
 export default function App() {
@@ -127,7 +128,7 @@ export default function App() {
                     <span className="block text-[10px] text-slate-500 font-semibold mb-1">Key Screening Parameters</span>
                     <ul className="space-y-1">
                       <li>• Citizenship / Location: SG pass</li>
-                      <li>• Experience level: 4+ Years</li>
+                      <li>• Experience level: {getExperienceLabel()}</li>
                       <li>• Notice Window: 1 Month</li>
                       <li>• Targeted Roles: Software Engineer, Full-Stack Developer</li>
                     </ul>

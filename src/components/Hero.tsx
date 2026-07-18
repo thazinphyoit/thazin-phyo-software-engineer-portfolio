@@ -24,7 +24,7 @@ export default function Hero({ onStartChat }: HeroProps) {
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/10 px-3.5 py-1.5 text-xs font-mono font-medium tracking-wide text-blue-400">
               <Sparkles className="h-3.5 w-3.5 text-blue-400" />
-              Available Immediately for Singapore / Remote Roles
+              Available Immediately for Singapore
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
@@ -92,6 +92,7 @@ export default function Hero({ onStartChat }: HeroProps) {
                   src={PERSONAL_INFO.avatarUrl}
                   alt={PERSONAL_INFO.name}
                   className="rounded-xl w-full aspect-square object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500"
+                  style={{ objectPosition: 'center 17%' }}
                   referrerPolicy="no-referrer"
                   id="hero-profile-image"
                 />

@@ -2,10 +2,20 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import { getYearsOfExperience } from './src/utils/experience';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'inject-years-of-experience',
+        transformIndexHtml(html) {
+          return html.replace(/%YEARS_OF_EXPERIENCE%/g, String(getYearsOfExperience()));
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

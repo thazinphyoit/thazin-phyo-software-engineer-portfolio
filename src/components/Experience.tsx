@@ -8,7 +8,7 @@ import { WORK_EXPERIENCES } from '../data/portfolioData';
 import { Briefcase, Calendar, MapPin, ChevronRight, ExternalLink, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 export default function Experience() {
-  const [expandedProject, setExpandedProject] = useState<string | null>("UOB Smart Rack Lock System");
+  const [expandedProject, setExpandedProject] = useState<string | null>("Smart Rack Access");
 
   return (
     <section id="experience" className="py-20 bg-slate-950">
