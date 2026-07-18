@@ -94,7 +94,7 @@ export default function Contact() {
                     <MapPin className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="block font-semibold text-slate-300">Office Location</span>
+                    <span className="block font-semibold text-slate-300">LocationLocation</span>
                     <span className="selectable text-slate-400">{PERSONAL_INFO.contact.address}</span>
                   </div>
                 </div>
