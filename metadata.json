@@ -1,0 +1,6 @@
+{
+  "name": "Thazin Phyo Software Engineer Portfolio",
+  "description": "Professional digital portfolio and resume of Thazin Phyo, Software Engineer specializing in full-stack web and mobile development, robot monitoring systems, and smart IoT lock dashboards. Includes custom analytics and an interactive AI resume assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
