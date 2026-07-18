@@ -85,7 +85,7 @@ export default function Contact() {
               </h3>
               
               <p className="text-xs text-slate-400 leading-relaxed">
-                Thazin is currently based in Woodlands, Singapore, and is ready for full-time Software Engineer positions. Available for onsite roles, hybrid setups, or remote collaborations.
+                Thazin is currently based in Simei, Singapore, and is ready for full-time Software Engineer positions. Available for onsite roles, hybrid setups, or remote collaborations.
               </p>
 
               <div className="space-y-4 pt-4">

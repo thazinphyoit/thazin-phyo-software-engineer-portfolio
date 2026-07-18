@@ -43,7 +43,7 @@ export default function Hero({ onStartChat }: HeroProps) {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-mono text-slate-300 pt-2">
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2">
                 <MapPin className="h-3.5 w-3.5 text-blue-500" />
-                <span>Woodlands, Singapore</span>
+                <span>Simei, Singapore</span>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2">
                 <Mail className="h-3.5 w-3.5 text-indigo-500" />

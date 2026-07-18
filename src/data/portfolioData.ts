@@ -8,10 +8,10 @@ import { SkillCategory, Experience, Certification, BlogPost } from '../types';
 export const PERSONAL_INFO = {
   name: "Thazin Phyo",
   title: "Software Engineer",
-  avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400", // Elegant professional placeholder avatar
+  avatarUrl: "https://6a5b792d53cbb51f4783fb11.imgix.net/sandbox/thazin-phyo-profile-picture.jpeg", // Elegant professional placeholder avatar
   profile: "Dependable IT professional with a proven track record of meeting deadlines. Passionate team player with a strong work ethic and adept at complex problem-solving. Eager to leverage skills and experience to contribute effectively to software development teams.",
   contact: {
-    address: "Block 688E, #07-62, Woodlands Drive 75, Singapore 735688",
+    address: "Block 232, #10-142, Simei Street 4, Singapore 520232",
     email: "thazinphyoit@gmail.com",
     whatsapp: "+6594482633",
     linkedin: "https://www.linkedin.com/in/thazin-phyo-a22544289/",
@@ -22,7 +22,7 @@ export const PERSONAL_INFO = {
     nationality: "Myanmar",
     maritalStatus: "Single",
     availability: "1 Month",
-    expectedSalary: "3,400 SGD (Negotiable)"
+    expectedSalary: " SGD 6,500(Negotiable)"
   },
   education: {
     degree: "Bachelor of Engineering (Information Technology)",

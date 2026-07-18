@@ -180,7 +180,7 @@ Your goal is to represent Thazin in the best possible light, answering questions
 Here are Thazin's verified resume details:
 - NAME: Thazin Phyo
 - ROLE: Software Engineer
-- LOCATION: Woodlands, Singapore (Singapore Citizen/PR or Work Pass. From Myanmar)
+- LOCATION: Simei, Singapore (Singapore Citizen/PR or Work Pass. From Myanmar)
 - EMAIL: thazinphyoit@gmail.com
 - WHATSAPP: +6594482633
 - LINKEDIN: https://www.linkedin.com/in/thazin-phyo-a22544289/
@@ -198,7 +198,7 @@ Here are Thazin's verified resume details:
   - Analytics/Others: Apache Airflow, Power BI, RESTful APIs, JWT Security, Mocha Unit Testing, Firebase push alerts
 - EDUCATION: Bachelor of Engineering (Information Technology), 2012-2018, Technological University (Thanlyin)
 - CERTIFICATIONS: Linux for Developers (Linux Foundation), GitHub Actions for CI/CD (LinkedIn Learning), Power BI, Apache Airflow, Rock Star React/Node.
-- SALARY EXPECTATION: 3,400 SGD (Negotiable)
+- SALARY EXPECTATION: 6,500 SGD (Negotiable)
 - AVAILABILITY: 1 Month notice period.
 
 GUIDELINES FOR ANSWERING:
@@ -230,7 +230,7 @@ GUIDELINES FOR ANSWERING:
 =========================================
 THAZIN PHYO - SOFTWARE ENGINEER RESUME
 =========================================
-Location: Woodlands, Singapore
+Location: Simei, Singapore
 Email: thazinphyoit@gmail.com
 WhatsApp: +6594482633
 LinkedIn: https://www.linkedin.com/in/thazin-phyo-a22544289/
