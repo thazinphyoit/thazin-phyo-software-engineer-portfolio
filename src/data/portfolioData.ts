@@ -114,6 +114,18 @@ export const WORK_EXPERIENCES: Experience[] = [
           ios: "https://apps.apple.com/us/app/id1526798401",
           android: "https://apkpure.com/troy-x-psa/com.nila"
         }
+      },
+      {
+        title: "Smart Asset Tracking",
+        description: "End-to-end RFID asset tracking platform spanning web dashboards, mobile scanning apps, and hardware integrations for real-time rack-level asset visibility.",
+        details: [
+          "Built U-Level tracking APIs and integrated them into the dashboard's rack diagram, floor plan, and gantry gate views, with Figma-designed bar, chart, and list visualizations.",
+          "Developed the mobile scanning app, including a redesigned login flow, real-time found/not-found scan results, and custom JSON data handling, plus a .NET desktop scan client for the RFD4031 handheld scanner.",
+          "Integrated Focus Gantry hardware (antenna/port configuration, tablet app) and Zebra printers (custom asset label & QR printing, resolved a recurring 'Media Out' layout issue) with the SAT backend.",
+          "Added Beacon LED/alarm activation APIs and refined antenna control to separate rack vs. door-mount detection and reduce noise and false triggers.",
+          "Ran anti-tampering and multi-asset-type U-Level detection testing, and supported customer demos, with hardware/software integration, dry runs, and debriefs."
+        ],
+        technologies: ["React.js", "React Native", "Node.js", "Spring Boot", "Figma", "RFID", "Zebra Printer SDK", "Bluetooth", ".NET", "MySQL"]
       }
     ]
   },
