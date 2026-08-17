@@ -6,6 +6,7 @@
 import React from 'react';
 import { Download, Mail, Phone, MapPin, Linkedin, Sparkles, MessageSquare } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { AVATAR_URL } from '../data/avatar';
 
 interface HeroProps {
   onStartChat: () => void;
@@ -89,7 +90,7 @@ export default function Hero({ onStartChat }: HeroProps) {
               
               <div className="relative rounded-2xl border border-slate-800 bg-slate-900 p-3 shadow-2xl">
                 <img
-                  src={PERSONAL_INFO.avatarUrl}
+                  src={AVATAR_URL}
                   alt={PERSONAL_INFO.name}
                   className="rounded-xl w-full aspect-square object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-500"
                   style={{ objectPosition: 'center 17%' }}

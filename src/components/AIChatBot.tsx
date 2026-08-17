@@ -5,17 +5,22 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Sparkles, Send, Bot, MessageSquare, CornerDownLeft, RefreshCw, AlertTriangle } from 'lucide-react';
+import { PERSONAL_INFO, WORK_EXPERIENCES } from '../data/portfolioData';
 
 interface ChatMessage {
   sender: 'user' | 'bot';
   text: string;
 }
 
+const firstName = PERSONAL_INFO.name.split(' ')[0];
+const sampleProjectTitles = WORK_EXPERIENCES.flatMap((exp) => exp.projects.map((p) => p.title)).slice(0, 3);
+const GREETING = `Hi! I am ${PERSONAL_INFO.name}'s AI Career Representative. I have been fully trained on ${firstName}'s resume, her projects (like ${sampleProjectTitles.join(', ')}), her certifications, and notice period. What would you like to know about hiring her?`;
+
 export default function AIChatBot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'bot',
-      text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like Smart Rack Access & the Robot Monitoring Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
+      text: GREETING
     }
   ]);
   const [input, setInput] = useState('');
@@ -74,7 +79,7 @@ export default function AIChatBot() {
     setMessages([
       {
         sender: 'bot',
-        text: "Hi! I am Thazin Phyo's AI Career Representative. I have been fully trained on Thazin's resume, her projects (like Smart Rack Access & the Robot Monitoring Dashboard), her certifications, and notice period. What would you like to know about hiring her?"
+        text: GREETING
       }
     ]);
     setError(null);

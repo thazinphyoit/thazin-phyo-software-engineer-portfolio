@@ -6,6 +6,7 @@
 import React from 'react';
 import { Terminal, Github, Linkedin, MessageSquare, BarChart2, UserCheck } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { AVATAR_URL } from '../data/avatar';
 
 interface HeaderProps {
   activeView: string;
@@ -41,7 +42,7 @@ export default function Header({ activeView, setActiveView, scrollToSection }: H
           id="brand-logo"
         >
           <img
-            src={PERSONAL_INFO.avatarUrl}
+            src={AVATAR_URL}
             alt={PERSONAL_INFO.name}
             className="h-9 w-9 rounded-lg object-cover shadow-lg shadow-blue-500/20"
             style={{ objectPosition: 'center 17%' }}

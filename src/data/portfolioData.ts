@@ -5,15 +5,14 @@
 
 import { SkillCategory, Experience, Certification, BlogPost } from '../types';
 import { CAREER_START_DATE } from './careerStartDate';
-import profilePicture from '../assets/profile.jpeg';
 
 export const PERSONAL_INFO = {
   name: "Thazin Phyo",
   title: "Software Engineer",
-  avatarUrl: profilePicture,
   profile: "Dependable IT professional with a proven track record of meeting deadlines. Passionate team player with a strong work ethic and adept at complex problem-solving. Eager to leverage skills and experience to contribute effectively to software development teams.",
   contact: {
     address: "Block 232, #10-142, Simei Street 4, Singapore 520232",
+    publicLocation: "Simei, Singapore",
     email: "thazinphyoit@gmail.com",
     whatsapp: "+6594482633",
     linkedin: "https://www.linkedin.com/in/thazin-phyo-a22544289/",
@@ -24,7 +23,7 @@ export const PERSONAL_INFO = {
     nationality: "Myanmar",
     maritalStatus: "Single",
     availability: "1 Month",
-    expectedSalary: " SGD 6,500(Negotiable)"
+    expectedSalary: " SGD 5,900(Negotiable)"
   },
   careerStartDate: CAREER_START_DATE,
   education: {
@@ -81,6 +80,18 @@ export const WORK_EXPERIENCES: Experience[] = [
     ],
     projects: [
       {
+        title: "Smart Asset Tracking",
+        description: "End-to-end RFID asset tracking platform spanning web dashboards, mobile scanning apps, and hardware integrations for real-time rack-level asset visibility.",
+        details: [
+          "Built U-Level tracking APIs and integrated them into the dashboard's rack diagram, floor plan, and gantry gate views, with Figma-designed bar, chart, and list visualizations.",
+          "Developed the mobile scanning app, including a redesigned login flow, real-time found/not-found scan results, and custom JSON data handling, plus a .NET desktop scan client for the RFD4031 handheld scanner.",
+          "Integrated Focus Gantry hardware (antenna/port configuration, tablet app) and Zebra printers (custom asset label & QR printing, resolved a recurring 'Media Out' layout issue) with the SAT backend.",
+          "Added Beacon LED/alarm activation APIs and refined antenna control to separate rack vs. door-mount detection and reduce noise and false triggers.",
+          "Ran anti-tampering and multi-asset-type U-Level detection testing, and supported customer demos, with hardware/software integration, dry runs, and debriefs."
+        ],
+        technologies: ["React.js", "React Native", "Node.js", "Spring Boot", "Figma", "RFID", "Zebra Printer SDK", "Bluetooth", ".NET", "MySQL"]
+      },
+      {
         title: "Smart Rack Access",
         description: "Integrated website with middleware and mobile applications for controlling physical rack doors and requests.",
         details: [
@@ -114,18 +125,6 @@ export const WORK_EXPERIENCES: Experience[] = [
           ios: "https://apps.apple.com/us/app/id1526798401",
           android: "https://apkpure.com/troy-x-psa/com.nila"
         }
-      },
-      {
-        title: "Smart Asset Tracking",
-        description: "End-to-end RFID asset tracking platform spanning web dashboards, mobile scanning apps, and hardware integrations for real-time rack-level asset visibility.",
-        details: [
-          "Built U-Level tracking APIs and integrated them into the dashboard's rack diagram, floor plan, and gantry gate views, with Figma-designed bar, chart, and list visualizations.",
-          "Developed the mobile scanning app, including a redesigned login flow, real-time found/not-found scan results, and custom JSON data handling, plus a .NET desktop scan client for the RFD4031 handheld scanner.",
-          "Integrated Focus Gantry hardware (antenna/port configuration, tablet app) and Zebra printers (custom asset label & QR printing, resolved a recurring 'Media Out' layout issue) with the SAT backend.",
-          "Added Beacon LED/alarm activation APIs and refined antenna control to separate rack vs. door-mount detection and reduce noise and false triggers.",
-          "Ran anti-tampering and multi-asset-type U-Level detection testing, and supported customer demos, with hardware/software integration, dry runs, and debriefs."
-        ],
-        technologies: ["React.js", "React Native", "Node.js", "Spring Boot", "Figma", "RFID", "Zebra Printer SDK", "Bluetooth", ".NET", "MySQL"]
       }
     ]
   },

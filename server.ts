@@ -9,7 +9,7 @@ import path from 'path';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 import { ContactMessage, AnalyticsEvent } from './src/types';
-import { getYearsOfExperience } from './src/utils/experience';
+import { buildFallbackAnswer, buildResumeText, buildSystemPrompt } from './src/utils/resumeContext';
 
 // In-Memory store for analytics. Let's populate it with realistic mock history 
 // so the dashboard looks beautiful and fully functional immediately!
@@ -162,53 +162,11 @@ async function startServer() {
     const ai = getGeminiClient();
     if (!ai) {
       // Fallback response if GEMINI_API_KEY is not configured
-      return res.json({
-        answer: `Hi! Thank you for asking. (AI Mode is currently in demo fallback).
-Thazin Phyo is a Singapore-based Software Engineer with over ${getYearsOfExperience()} years of experience.
-She specializes in:
-- React, Node.js, Express, TypeScript, and React Native.
-- Building IoT systems, Smart Rack Access Systems, and Surveillance and Escort Robot Monitoring Dashboards (Flask/Python/Docker).
-- Certified in Linux, CI/CD GitHub Actions, Apache Airflow, and Power BI.
-
-To unlock full interactive AI discussions, please configure the GEMINI_API_KEY inside AI Studio Secrets.`
-      });
+      return res.json({ answer: buildFallbackAnswer() });
     }
 
     try {
-      const systemPrompt = `
-You are a highly polite, professional, and charming AI Recruiter Assistant representing Thazin Phyo, a Software Engineer based in Singapore.
-Your goal is to represent Thazin in the best possible light, answering questions from hiring managers, technical leads, or clients.
-
-Here are Thazin's verified resume details:
-- NAME: Thazin Phyo
-- ROLE: Software Engineer
-- LOCATION: Simei, Singapore (Singapore Citizen/PR or Work Pass. From Myanmar)
-- EMAIL: thazinphyoit@gmail.com
-- WHATSAPP: +6594482633
-- LINKEDIN: https://www.linkedin.com/in/thazin-phyo-a22544289/
-- TOTAL EXPERIENCE: ${getYearsOfExperience()}+ Years (Software Developer at Datumstruct Singapore from Nov 2020 to Present; Junior Dev at Micro Services from May 2019 to Aug 2020)
-- KEY PROJECTS:
-  1. Smart Rack Access: React.js, Node.js, React Native, Java Servlet, MySQL. Controls physical cabinet rack doors.
-  2. Surveillance and Escort Robot Monitoring Dashboard: Python, Flask, SQLAlchemy, MySQL, Docker. Centralized web system for monitoring D3BOT/D5BOT robot missions and recording thermal anomalies.
-  3. Bluetooth Wi-Fi Lock Management: Deployed responsive web/mobile app controls for container port racks.
-  4. Library Management System: PHP, Bootstrap, MySQL.
-- TECHNICAL SKILLS:
-  - Languages: JavaScript, TypeScript, Python, Java, PHP, HTML5, CSS3, SASS
-  - Frameworks: React.js, Next.js, Redux, Material UI, Tailwind CSS, Bootstrap 5, Express.js, Spring Boot, Flask, Django
-  - Databases: PostgreSQL, MySQL, MongoDB, SQLAlchemy, Hibernate
-  - Infrastructure/DevOps: Docker, Kubernetes, GitHub Actions (CI/CD), Ansible, Linux (Ubuntu/Debian), Bash scripting, Virtual Machines, Azure Portal, NAS Synology
-  - Analytics/Others: Apache Airflow, Power BI, RESTful APIs, JWT Security, Mocha Unit Testing, Firebase push alerts
-- EDUCATION: Bachelor of Engineering (Information Technology), 2012-2018, Technological University (Thanlyin)
-- CERTIFICATIONS: Linux for Developers (Linux Foundation), GitHub Actions for CI/CD (LinkedIn Learning), Power BI, Apache Airflow, Rock Star React/Node.
-- SALARY EXPECTATION: 6,500 SGD (Negotiable)
-- AVAILABILITY: 1 Month notice period.
-
-GUIDELINES FOR ANSWERING:
-- Be warm, professional, encouraging, and clear.
-- Keep answers relatively concise (1-3 paragraphs) and highly scannable.
-- If they ask general questions unrelated to Thazin, her career, or hiring her, politely redirect them back to her portfolio.
-- Never make up information. If some detail isn't in her profile, say that you don't have that specific record, but invite them to reach out to Thazin directly via Email (thazinphyoit@gmail.com) or WhatsApp (+6594482633).
-`;
+      const systemPrompt = buildSystemPrompt();
 
       const response = await ai.models.generateContent({
         model: 'gemini-3.5-flash',
@@ -228,57 +186,7 @@ GUIDELINES FOR ANSWERING:
 
   // API: Get Printable/Plain-Text Resume Download
   app.get('/api/resume/download', (req, res) => {
-    const resumeText = `
-=========================================
-THAZIN PHYO - SOFTWARE ENGINEER RESUME
-=========================================
-Location: Simei, Singapore
-Email: thazinphyoit@gmail.com
-WhatsApp: +6594482633
-LinkedIn: https://www.linkedin.com/in/thazin-phyo-a22544289/
-
-PROFILE:
-Dependable IT professional with over ${getYearsOfExperience()} years of proven track record.
-Passionate team player with a strong work ethic and adept at complex problem-solving.
-Eager to leverage skills and experience to contribute to software engineering projects.
-
-EDUCATION:
-- Bachelor of Engineering (Information Technology)
-  Technological University (Thanlyin) | 2012 - 2018
-
-CORE SKILLS:
-- Languages: JavaScript, TypeScript, Python, Java, PHP, HTML5, CSS, SQL
-- Frontend: React.js, Next.js, Redux, Tailwind CSS, Bootstrap 5, Material UI
-- Backend & Mobile: Node.js, Express.js, React Native, Flask, Django, Spring Boot
-- Databases: PostgreSQL, MySQL, MongoDB, SQLAlchemy, Hibernate
-- DevOps & Tools: Docker, Kubernetes, GitHub Actions (CI/CD), Ansible, Linux, Airflow, Power BI, JWT, Mocha
-
-WORK EXPERIENCE:
-
-1. Software Developer | Datumstruct (S) Pte Ltd, Changi, Singapore
-   November 2020 - Present (Onsite & Remote)
-   * Designed, integrated, and tested software with hardware components before deployment.
-   * Key Project: Smart Rack Access (React, Node, React Native, Java, Servlet, MySQL).
-   * Key Project: Surveillance and Escort Robot Monitoring Dashboard (Python, Flask, SQLAlchemy, MySQL, Docker). Deployed centralized dashboard for robot map missions and anomaly alerts.
-   * Key Project: Bluetooth Wi-Fi Lock Management (React, React Native, Node).
-   * Deployed REST APIs with JWT authentication, Mocha tests, and Firebase notifications.
-
-2. Junior Software Developer | Micro Services, Yangon, Myanmar
-   May 2019 - August 2020 (On Site)
-   * Collaborated on web and mobile app development and input sanitization.
-   * Key Project: Library Management System (PHP, Bootstrap, MySQL).
-
-CERTIFICATIONS:
-- Linux for Developers (The Linux Foundation)
-- GitHub Actions for CI/CD (LinkedIn Learning)
-- Power BI Essential Training (LinkedIn Learning)
-- Learning Apache Airflow (LinkedIn Learning)
-
-REFERENCES:
-- Nila Hlaing (Manager, Datumstruct Singapore) | nilahlaing@datumstruct.com
-- Nay Oo Kyaw (Senior Software Developer, Datumstruct) | nayookyaw@datumstruct.com
-=========================================
-`;
+    const resumeText = buildResumeText();
     res.setHeader('Content-disposition', 'attachment; filename=Thazin_Phyo_Resume.txt');
     res.setHeader('Content-type', 'text/plain');
     res.write(resumeText);
