@@ -4,7 +4,7 @@
  */
 
 import { SkillCategory, Experience, Certification, BlogPost } from '../types';
-import { CAREER_START_DATE } from './careerStartDate';
+import { CAREER_START_DATE } from './careerStartDate.js';
 
 export const PERSONAL_INFO = {
   name: "Thazin Phyo",
